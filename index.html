@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>高德地图UI库边界</title>
+		<style>
+			.border-tool .title{
+				text-align:center;
+			}
+
+			.border-tool .instruction{
+				margin:5px 120px;
+				color:#555;
+			}
+
+			.border-tool .instruction.bold{
+				font-weight:bold;
+			}
+
+			.border-tool .wrap{
+				margin:20px 36px;
+				text-align:center;
+				/*border:1px dotted #ccc;*/
+			}
+
+			.border-tool .wrap.text-left{
+				text-align:left;
+			}
+
+			.border-tool .search-input{
+				width:260px;
+				height:36px;
+				margin-right:20px;
+				padding:0 6px;
+				border-radius:4px;
+				border:1px solid rgba(188,188,188,1);
+				outline:none;
+			}
+			.border-tool .search-input:hover{
+				border-color:rgba(200,200,200,0.6);
+			}
+
+			.border-tool .search-button{
+				display:inline-block;
+				width:80px;
+				height:36px;
+				line-height:36px;
+				text-align:center;
+				border-radius:4px;
+				background-color:#5bc0de;
+				color:#fff;
+				cursor:pointer;
+			}
+			.border-tool .search-button:hover{
+				opacity:0.7;
+			}
+
+			.border-tool .text-area{
+				display:inline-block;
+				width:100%;
+				height:160px;
+				border:1px dotted #bbb;
+				overflow-y:scroll;
+			}
+
+			.border-tool .map{
+				height:500px;
+				margin:20px 36px;
+				border:1px solid #888;
+			}
+		</style>
+	</head>
+	<body class="border-tool">
+		<header>
+			<h1 class="title">高德地图UI组件库行政区划边界</h1>
+		</header>
+		<section>
+			<div>
+				<p class="instruction">
+					使用说明：本工具基于高德原生地图API以及高德地图UI组件库。
+				</p>
+				<p class="instruction">
+					使用方法：在搜索框中输入行政区编码，然后点击生成按钮。下方文本框中就会显示生成的坐标数据。同时下方地图中会绘制出该行政区，图形化展示结果可防止出错。<br>
+				</p>
+				<p class="instruction bold">
+					注意事项：<br/>
+					1.搜索框内输入高德地图行政区划编码（https://webapi.amap.com/ui/1.0/ui/geo/DistrictExplorer/examples/group.html）；<br/>
+					2.获取的数据为二维数组形式，第一个数组为中国边界、第二个数组为查询的地区边界；
+				</p>
+			</div>
+			<div class="wrap">
+				<span>市编码</span>
+				<input id="search-city" class="search-input" placeholder="请输入市编码，如330100">
+				<span>区编码</span>
+				<input id="search-district" class="search-input" placeholder="请输入区编码，如330109">
+				<div id="search-button" class="search-button">生成</div>
+			</div>
+			<div class="wrap text-left">
+				<p>生成配置文件：</p>
+				<textarea id="text-area" class="text-area"></textarea>
+			</div>
+			<div id="borderPane" class="map"></div>
+		</section>
+
+		<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.6&key=74743bf306158617beb2abff5e8f074b'></script>
+		<script src="//webapi.amap.com/ui/1.0/main.js"></script>
+		<script src="./js/amapUIBorder.js"></script>
+	</body>
+</html>
