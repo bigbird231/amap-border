@@ -1,6 +1,6 @@
 # amapBorder
 
-- **Description**: A tool that help me get map-coordinate-borders for city.
+- **Description**: A tool that help get map-coordinate-borders for city.
 - **Detail**: Map coordinates rely on AMap(a map util from Alibaba).
 - **How to use**: Get regioncode from [AMap-website](https://webapi.amap.com/ui/1.0/ui/geo/DistrictExplorer/examples/group.html),and search the borders in this tool.
 
