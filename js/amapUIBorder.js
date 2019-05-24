@@ -12,6 +12,7 @@
             center: [116.397428, 39.90923],//地图中心点
             zoom: 10 //地图显示的缩放级别
         });
+        //区域多边形数组
         polygons=[];
         //dom
         searchCity=document.getElementById("search-city");
@@ -27,6 +28,7 @@
 
     //绑定dom事件
     function bindListener(){
+        //搜索逻辑
         searchButton.addEventListener("click",function(event){
             if(searchCity.value==""){
                 alert("请输入市编码！");
