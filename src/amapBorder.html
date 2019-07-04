@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>高德地图边界</title>
+		<style>
+			.border-tool .title{
+				text-align:center;
+			}
+
+			.border-tool .instruction{
+				margin:5px 120px;
+				color:#555;
+			}
+
+			.border-tool .instruction.bold{
+				font-weight:bold;
+			}
+
+			.border-tool .wrap{
+				margin:20px 36px;
+				/*border:1px dotted #ccc;*/
+			}
+
+			.border-tool .search-input{
+				width:260px;
+				height:36px;
+				margin-left:40%;
+				margin-right:20px;
+				padding:0 6px;
+				border-radius:4px;
+				border:1px solid rgba(188,188,188,1);
+				outline:none;
+			}
+			.border-tool .search-input:hover{
+				border-color:rgba(200,200,200,0.6);
+			}
+
+			.border-tool .search-button{
+				display:inline-block;
+				width:80px;
+				height:36px;
+				line-height:36px;
+				text-align:center;
+				border-radius:4px;
+				background-color:#5bc0de;
+				color:#fff;
+				cursor:pointer;
+			}
+			.border-tool .search-button:hover{
+				opacity:0.7;
+			}
+
+			.border-tool .text-area{
+				display:inline-block;
+				width:100%;
+				height:160px;
+				border:1px dotted #bbb;
+				overflow-y:scroll;
+			}
+
+			.border-tool .map{
+				height:500px;
+				margin:20px 36px;
+				border:1px solid #888;
+			}
+		</style>
+	</head>
+	<body class="border-tool">
+		<header>
+			<h1 class="title">高德地图行政区划边界（未抽稀）</h1>
+		</header>
+		<section>
+			<div>
+				<p class="instruction">
+					使用说明：本工具基于高德原生地图API（适用于获取单个行政区的精确坐标信息，数据量大）。
+				</p>
+				<p class="instruction">
+					使用方法：在搜索框中输入行政区名称，例如“萧山”（搜索支持模糊查询），然后点击查询按钮，下方文本框中就会显示该区域的行政区边界坐标（基于高德地图的坐标系统），同时下方地图中会绘制出该行政区，图形化展示结果可防止出错。<br>
+				</p>
+				<p class="instruction bold">
+					注意事项：由于数据没有抽稀处理，在搜索国家时，查询速度会很慢，此时请耐心等待，无谓的操作将会导致页面崩溃。
+				</p>
+			</div>
+			<div class="wrap">
+				<input id="search-input" class="search-input" placeholder="请输入要查询的行政区域名称">
+				<div id="search-button" class="search-button">查询</div>
+			</div>
+			<div class="wrap">
+				<p>区域边界坐标查询结果：</p>
+				<textarea id="text-area" class="text-area"></textarea>
+			</div>
+			<div id="borderPane" class="map"></div>
+		</section>
+
+		<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.6&key=74743bf306158617beb2abff5e8f074b'></script>
+		<script src="./js/amapBorder.js"></script>
+	</body>
+</html>
