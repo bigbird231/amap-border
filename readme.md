@@ -1,4 +1,4 @@
-# amapBorder
+# amapborder
 
 - **Description**: A tool that help get map-coordinate-borders for city.
 - **Detail**: Map coordinates rely on AMap(a map util from Alibaba).
